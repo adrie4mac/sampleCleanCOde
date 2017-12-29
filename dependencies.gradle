@@ -12,6 +12,12 @@ ext {
     androidTargetSdkVersion = 26
     androidCompileSdkVersion = 26
 
+    // Package Name
+    appPackageNameDevelopment = "com.mataharimall.mmandroid.dev"
+    appPackageNameStaging = "com.mataharimall.mmandroid.stage"
+    appPackageNamePrerelease = "com.mataharimall.mmandroid.prerelease"
+    appPackageNameProduction = "com.mataharimall.mmandroid"
+
     //Libraries
     kotlinVersion = '1.1.3-2'
     butterKnifeVersion = '7.0.1'

@@ -9,6 +9,7 @@ android {
 
     compileSdkVersion 27
     buildToolsVersion globalConfiguration["androidBuildToolsVersion"]
+    flavorDimensions "default"
 
     defaultConfig {
         applicationId "com.mataharimall.mmandroid"
@@ -21,6 +22,33 @@ android {
     buildTypes {
         debug {
             testCoverageEnabled true
+        }
+    }
+
+    productFlavors {
+        development {
+            applicationId globalConfiguration["appPackageNameDevelopment"]
+            versionCode 19
+            versionName '3.0.0'
+            dimension "default"
+        }
+        staging {
+            applicationId globalConfiguration["appPackageNameStaging"]
+            versionCode 338
+            versionName "3.0.0"
+            dimension "default"
+        }
+        prerelease {
+            applicationId globalConfiguration["appPackageNamePrerelease"]
+            versionCode 341
+            versionName "3.0.0"
+            dimension "default"
+        }
+        production {
+            applicationId globalConfiguration["appPackageNameProduction"]
+            versionCode 67
+            versionName "3.0.0"
+            dimension "default"
         }
     }
 
