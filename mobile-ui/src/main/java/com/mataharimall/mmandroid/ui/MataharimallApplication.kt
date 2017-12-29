@@ -3,6 +3,7 @@ package com.mataharimall.mmandroid.ui
 import android.app.Activity
 import android.app.Application
 import android.support.v4.BuildConfig
+import com.mataharimall.mmandroid.ui.injection.DaggerApplicationComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasActivityInjector
@@ -18,11 +19,11 @@ class MataharimallApplication : Application(), HasActivityInjector {
 
     override fun onCreate() {
         super.onCreate()
-//        DaggerApplicationComponent
-//                .builder()
-//                .application(this)
-//                .build()
-//                .inject(this)
+        DaggerApplicationComponent
+                .builder()
+                .application(this)
+                .build()
+                .inject(this)
 //        setupTimber()
     }
 

@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import com.mataharimall.mmandroid.presentation.splash.SplashMvp
 import com.mataharimall.mmandroid.ui.R
 import com.mataharimall.mmandroid.ui.module.login.LoginActivity
+import dagger.android.AndroidInjection
 import javax.inject.Inject
 
 /**
@@ -18,6 +19,7 @@ class SplashActivity: AppCompatActivity(), SplashMvp.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+        AndroidInjection.inject(this)
     }
 
     override fun setPresenter(presenter: SplashMvp.Presenter) {
@@ -26,7 +28,7 @@ class SplashActivity: AppCompatActivity(), SplashMvp.View {
     }
 
     override fun openLoginPage() {
-        finish()
         startActivity(Intent(this, LoginActivity::class.java))
+        finish()
     }
 }
