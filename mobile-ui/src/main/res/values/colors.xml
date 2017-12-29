@@ -9,5 +9,9 @@
     <color name="geyser">#d0d0d0</color>
     <color name="transparent">#00000000</color>
     <color name="ferrari_red">#E92C00</color>
+    <color name="ferrari_red_dark">#811901</color>
+
+    <color name="charcoal_opacity_80">#CC424242</color>
+    <color name="charcoal_opacity_90">#F2424242</color>
 
 </resources>

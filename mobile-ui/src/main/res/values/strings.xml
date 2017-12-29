@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Mataharimall</string>
+
+    <!-- Login - Register -->
+    <string name="login_button_login">Log in</string>
+
 </resources>

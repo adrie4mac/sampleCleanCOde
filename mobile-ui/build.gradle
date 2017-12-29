@@ -11,6 +11,7 @@ android {
     buildToolsVersion globalConfiguration["androidBuildToolsVersion"]
 
     defaultConfig {
+        applicationId "com.mataharimall.mmandroid"
         minSdkVersion globalConfiguration["androidMinSdkVersion"]
         targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
         multiDexEnabled = true
