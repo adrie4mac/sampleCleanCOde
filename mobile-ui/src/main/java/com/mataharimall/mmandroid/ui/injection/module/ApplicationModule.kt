@@ -7,6 +7,9 @@ import dagger.Provides
 import com.mataharimall.mmandroid.data.executor.JobExecutor
 import com.mataharimall.mmandroid.domain.executor.PostExecutionThread
 import com.mataharimall.mmandroid.domain.executor.ThreadExecutor
+import com.mataharimall.mmandroid.remoteapi.ApiService
+import com.mataharimall.mmandroid.remoteapi.RequestProcessor
+import com.mataharimall.mmandroid.ui.BuildConfig
 import com.mataharimall.mmandroid.ui.UiThread
 import com.mataharimall.mmandroid.ui.injection.scopes.PerApplication
 
@@ -32,5 +35,11 @@ open class ApplicationModule {
     @PerApplication
     internal fun providePostExecutionThread(uiThread: UiThread): PostExecutionThread {
         return uiThread
+    }
+
+    @Provides
+    @PerApplication
+    internal fun provideService(): ApiService {
+        return RequestProcessor.retrofitService(BuildConfig.DEBUG)
     }
 }

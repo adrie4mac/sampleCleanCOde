@@ -11,9 +11,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 /**
- * Created by adrie_savana on 12/28/17.
+ * Provide "make" methods to create instances of [BufferooService]
+ * and its related dependencies, such as OkHttpClient, Gson, etc.
  */
-object NetworkService {
+object RequestProcessor {
+
+    private val HTTPS = "https:/"
+    private val HTTP = "http:/"
+    private var mBaseEndpoint = "https://api.mataharimall.co/v3"
 
     fun retrofitService(isDebug: Boolean): ApiService {
         val okHttpClient = okHttpClient(
@@ -23,7 +28,7 @@ object NetworkService {
 
     private fun service(okHttpClient: OkHttpClient, gson: Gson): ApiService {
         val retrofit = Retrofit.Builder()
-                .baseUrl("https://api.mataharimall.co/v3")
+                .baseUrl(mBaseEndpoint)
                 .client(okHttpClient)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gson))
